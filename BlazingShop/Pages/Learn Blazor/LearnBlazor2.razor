@@ -1,0 +1,20 @@
+﻿
+@page "/learnblazor2"
+<h3>LearnBlazor</h3>
+<h3 class="text-info pb-3">@welcomeText</h3>
+
+<p>On Change &nbsp; <input @bind="name" /></p>
+<p>On Spontaneous Change &nbsp; <input @bind="name" @bind:event="oninput" /></p>
+
+<p>I am @name</p>
+
+<p><button @onclick="getName">Suprise Me!</button></p>
+
+@code {
+    string name = "Alex";
+    string welcomeText = "Time to learn Blazor!";
+    void getName()
+    {
+        name = "Blazor Learner";
+    }
+}
